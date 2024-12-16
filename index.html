@@ -1,78 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Memory Game</title>
+    <title>Match It - A Memory Game</title>
+    <link rel="icon" href="./css/collateral/icon.png">
+    <link rel="stylesheet" href="https://use.typekit.net/zmp7fmn.css">
     <link rel="stylesheet" href="./css/style.css">
     <script defer src="./js/game.js"></script>
 </head>
+<style>
+    body:hover {
+        cursor: url(./css/collateral/match_1.png);
+    }
+</style>
+
 <body>
     <section class="game-container">
         <div class="header">
-            <h1>Memory Game</h1>
+            <img src="./css/collateral/lit-match.png" alt="lit-match" class="header-img">
+            <div class="header-text"></div>
+                <h1>Match It</h1>
+                <h2>A memory game.</h2>
+            </div>
         </div>
         <div class="game-rules">
-            <h2>Rules</h2>
+            <h2>Game Rules</h2>
             <ul>
-                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
-                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
-                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
-                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
-                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+                <li><strong>Objective: </strong>Match all pairs of cards within 45 seconds.</li>
+                <li><strong>Flipping Cards:</strong> Click two cards to flip them. Matches stay face up.</li>
+                <li><strong>Winning:</strong> Match all pairs before the timer runs out.</li>
+                <li><strong>Losing</strong> If time runs out before all pairs are matched, you lose.</li>
+                <li><strong>Controls:</strong> Click the first card to begin and "Restart" button restart the game. Enjoy!</li>
             </ul>
         </div>
-        <div class="game-board">
-            <div class="card" id="card-1">
-                <div class="card-front"></div>
-                <div class="card-back"></div>
+        <div class="card-container">
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front"><img src="./css/collateral/strike-strip.png" style="width: 100px;"
+                            alt="strike-strip"></div>
+                    <div class="card-back">back</div>
+                </div>
             </div>
-            <div class="card" id="card-2">
-                <div class="card-front"></div>
-                <div class="card-back"></div>
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front"><img src="./css/collateral/strike-strip.png" style="width: 100px;"
+                            alt="strike-strip"></div>
+                    <div class="card-back">back</div>
+                </div>
             </div>
-            <div class="card" id="card-3">
-                <div class="card-front"></div>
-                <div class="card-back"></div>
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front"><img src="./css/collateral/strike-strip.png" style="width: 100px;"
+                            alt="strike-strip"></div>
+                    <div class="card-back">back</div>
+                </div>
             </div>
-            <div class="card" id="card-4">
-                <div class="card-front"></div>
-                <div class="card-back"></div>
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front"><img src="./css/collateral/strike-strip.png" style="width: 100px;"
+                            alt="strike-strip"></div>
+                    <div class="card-back">back</div>
+                </div>
             </div>
-            <div class="card" id="card-5">
-                <div class="card-front"></div>
-                <div class="card-back"></div>
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front"><img src="./css/collateral/strike-strip.png" style="width: 100px;"
+                            alt="strike-strip"></div>
+                    <div class="card-back">back</div>
+                </div>
             </div>
-            <div class="card" id="card-6">
-                <div class="card-front"></div>
-                <div class="card-back"></div>
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front"><img src="./css/collateral/strike-strip.png" style="width: 100px;"
+                            alt="strike-strip"></div>
+                    <div class="card-back">back</div>
+                </div>
             </div>
-            <div class="card" id="card-7">
-                <div class="card-front"></div>
-                <div class="card-back"></div>
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front"><img src="./css/collateral/strike-strip.png" style="width: 100px;"
+                            alt="strike-strip"></div>
+                    <div class="card-back">back</div>
+                </div>
             </div>
-            <div class="card" id="card-8">
-                <div class="card-front"></div>
-                <div class="card-back"></div>
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front"><img src="./css/collateral/strike-strip.png" style="width: 100px;"
+                            alt="strike-strip"></div>
+                    <div class="card-back">back</div>
+                </div>
             </div>
-            <div class="card" id="card-9">
-                <div class="card-front"></div>
-                <div class="card-back"></div>
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front"><img src="./css/collateral/strike-strip.png" style="width: 100px;"
+                            alt="strike-strip"></div>
+                    <div class="card-back">back</div>
+                </div>
             </div>
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front"><img src="./css/collateral/strike-strip.png" style="width: 100px;"
+                            alt="strike-strip"></div>
+                    <div class="card-back">back</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front"><img src="./css/collateral/strike-strip.png" style="width: 100px;"
+                            alt="strike-strip"></div>
+                    <div class="card-back">back</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front"><img src="./css/collateral/strike-strip.png" style="width: 100px;"
+                            alt="strike-strip"></div>
+                    <div class="card-back">back</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front"><img src="./css/collateral/strike-strip.png" style="width: 100px;"
+                            alt="strike-strip"></div>
+                    <div class="card-back">back</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front"><img src="./css/collateral/strike-strip.png" style="width: 100px;"
+                            alt="strike-strip"></div>
+                    <div class="card-back">back</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front"><img src="./css/collateral/strike-strip.png" style="width: 100px;"
+                            alt="strike-strip"></div>
+                    <div class="card-back">back</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front"><img src="./css/collateral/strike-strip.png" style="width: 100px;"
+                            alt="strike-strip"></div>
+                    <div class="card-back">back</div>
+                </div>
+            </div>
+
         </div>
         <div class="footer">
-            <div id="game-clock">00:00</div>
-        
+            <div id="game-clock">Time Remaining</div>
+
             <div class="level-btn-container">
                 <button id="level-1">Level 1</button>
                 <button id="level-2">Level 2</button>
                 <button id="level-3">Level 3</button>
             </div>
             <div class="gameplay-btn-container">
-                <button id="play-pause">Pause</button>
                 <button id="restart">Restart</button>
             </div>
         </div>
+
+        <div id="win-modal" class="modal">
+            <div class="modal-content"> <span class="close" onclick="closeModal('win-modal')">&times;</span>
+                <p>You win!
+                    <img src="./css/collateral/lit-match.png" alt="lit-match">
+                </p>
+                <button id="modalRestartWin" onclick="restartGame()">Restart Game</button>
+            </div>
+        </div>
+        <div id="lose-modal" class="modal">
+            <div class="modal-content"> <span class="close" onclick="closeModal('lose-modal')">&times;</span>
+                <p>Time's up! <br>You lose.</p>
+                <button id="modalRestartLose" onclick="restartGame()">Restart
+                    Game</button>
+            </div>
+
     </section>
 </body>
+
 </html>

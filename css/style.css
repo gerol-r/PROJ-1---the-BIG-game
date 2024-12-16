@@ -1,72 +1,262 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url('./collateral/background.jpg');
+  margin: 0;
+  font-family: Arial, sans-serif;
+  cursor: url(./collateral/match_1.svg) 12 12!important, auto !important;
+}
+
 .game-container {
-    display: grid;
-    grid-template-columns: auto auto auto;
-    gap: 10px;
-    background-color: #2196F3;
-    padding: 10px;
-  }
-  .header {
-    grid-column-start: 3;
-    grid-column-end: 4;
-    grid-row-start: 1;
-    grid-row-end: 2;
-  }
-  .game-rules {
-    grid-column-start: 1;
-    grid-column-end: 2;
-    grid-row-start: 2;
-    grid-row-end: 4;
-  }
-  .game-board {
-    grid-column-start: 2;
-    grid-column-end: 5;
-    grid-row-start: 2;
-    grid-row-end: 14;
-    display: grid;
-    column-gap: 5px;
-    row-gap: 5px;
-    grid-template-areas: 
-    'card-1 card-2 card-3'
-    'card-4 card-5 card-6'
-    'card-7 card-8 card-9';
-    text-align: center;
-    max-width: 475px;
-  }
-  .footer {
-    grid-column-start: 1;
-    grid-column-end: 6;
-    grid-row-start: 14;
-    grid-row-end: 16;
-    display: grid;
-    grid-template-areas: 'game-clock level-btn-container gameplay-btn-container';
-    margin-top: 20px;
-  }
-  .card{
-    background-color: purple;
-    text-align: center;
-    padding: 20px 0;
-    font-size: 30px;
-    color: orange;
-    border-radius: 5px;
-  }
-  .card-front{
-    background-image: url("./collateral/match-stick.svg");
-    text-align: center;
-    padding: 20px 0;
-    font-size: 30px;
-    color: orange;
-    border-radius: 5px;
-  }
-  .game-rules{
-    max-width: 200px;
-    word-wrap: break-word;
-  }
-  #game-clock{
-    background-color: black;
-    color: red;
-    border: 3px;
-    padding: 10px;
-    font-size: 28px;
-    max-width: 150px;
-    text-align: center;
-  }
+  text-align: center;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 10px;
+  background-color: #e9d8a6;
+  padding: 10px;
+  padding-right: 100px;
+  min-width: 680px;
+  border: solid 5px #005f73;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.header {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto;
+  align-items: center;
+  grid-column: 1 / -1;
+  margin-bottom: 5px;
+  margin-top: 0;
+}
+
+.header-img {
+  grid-row: 1/3;
+  margin-right: -95px;
+  margin-left: 355px;
+  margin-bottom: -70px;
+  margin-top: -20px;
+}
+
+.header-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  grid-column: 2/3;
+}
+
+.header h1 {
+  font-family: "puffin-arcade-chrome", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+  -webkit-text-fill-color: #ba4126;
+  font-size: 72pt;
+  margin-bottom: 3px;
+  margin-top: 20px;
+}
+
+.header h2 {
+  font-family: "puffin-arcade-regular", sans-serif;
+  color: #ae2012;
+  margin-bottom: 20;
+  margin-left: 500px;
+  margin-right: -350px;
+  ma
+}
+
+.game-rules {
+  grid-column: 1 / 2;
+  grid-row: 2 / 4;
+  padding-top: 10px;
+  padding-right: 25px;
+  margin-right: 60px;
+  margin-left: 20px;
+  max-width: 400px;
+  color: #005f73;
+  background-color: rgba(255, 255, 255, 0.3);
+  border: 2px solid #005f73;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+}
+
+.game-rules h2 {
+  font-family: "puffin-arcade-regular", sans-serif;
+  font-weight: 600;
+  margin: 0;
+  margin-top: 5px;
+}
+
+.game-rules li {
+  color: #005f73;
+  text-align: left;
+  margin-bottom: 9px;
+}
+
+.card-container {
+  grid-column: 2 / 5;
+  grid-row: 2 / 5;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 10px;
+  text-align: center;
+}
+
+.card {
+  width: 100px;
+  height: 100px;
+  perspective: 1000px;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #005f73;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.card-front {
+  background-color: rgba(255, 255, 255, 0.3);
+  color: #000;
+}
+
+.card-back {
+  background-color: #005f73;
+  ;
+  color: #fff;
+  transform: rotateY(180deg);
+  font-size: 60px;
+}
+
+.footer {
+  grid-column: 1 / 6;
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-between;
+}
+
+@font-face {
+  font-family: 'digital-clock-font';
+  src: url('./collateral/ds_digital/DS-DIGI.TTF');
+}
+
+#game-clock {
+  background-color: black;
+  color: red;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  padding: 5px;
+  font-size: 60px;
+  width: 75px;
+  text-align: center;
+  border-radius: 3px;
+  border: solid 4px rgb(119, 119, 119);
+  font-family: 'digital-clock-font';
+  margin-left: 20px;
+  margin-bottom: 20px;
+
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+  padding-top: 60px;
+}
+
+.modal-content {
+  background-color: #e9d8a6;
+  margin: 5% auto;
+  padding: 20px;
+  border: 5px solid #005f73;
+  width: 800%;
+  max-width: 400px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+#win-modal .modal-content p {
+  font-family: "puffin-arcade-chrome", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+  -webkit-text-fill-color: #005f73;
+  font-size: 72pt;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#lose-modal .modal-content p {
+  font-family: "puffin-arcade-chrome", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+  -webkit-text-fill-color: #9b2226;
+  font-size: 72pt;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.close {
+  color: #005f73;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+#lose-modal .close {
+  color: #ae2012;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+button {
+  color: #005f73;
+  background-color: rgba(255, 255, 255, 0.3);
+  border: 1px solid #005f73;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 5px 7px;
+  font-size: 14pt;
+  border-radius: 3px;
+}
+
+.level-btn-container button {
+  display: none;
+}
+
+.gameplay-btn-container button{
+  margin-right: 20px;
+  border: solid 2px;
+  font-weight: 600;
+}
