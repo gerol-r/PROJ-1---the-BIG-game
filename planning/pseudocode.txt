@@ -1,0 +1,74 @@
+START
+
+// HTML and CSS Setup
+SETUP game container with timer display and game board
+STYLE game elements with CSS
+
+// JavaScript Initialization
+DECLARE firstCard, secondCard, matchedPairs, totalPairs, timeLeft, timerInterval
+INITIALIZE firstCard to NULL
+INITIALIZE secondCard to NULL
+INITIALIZE matchedPairs to 0
+INITIALIZE totalPairs to total number of pairs on the board
+INITIALIZE timeLeft to allotted time in seconds
+
+// Function to shuffle and set up the game board
+FUNCTION setupBoard()
+    CREATE an array of card values with pairs
+    SHUFFLE the array
+    LOOP through the shuffled array
+        CREATE card elements and set their data value
+        ADD event listener to each card for the flip action
+        APPEND cards to the game board
+
+// Function to start the game
+FUNCTION startGame()
+    CALL setupBoard()
+    START timerInterval to decrement timeLeft every second
+    DISPLAY initial timeLeft
+
+// Function to handle card flip
+FUNCTION handleCardFlip(event)
+    SET clickedCard to event target
+    IF clickedCard is already flipped or matched
+        RETURN
+    IF firstCard is NULL
+        SET firstCard to clickedCard
+        FLIP firstCard face up
+    ELSE
+        SET secondCard to clickedCard
+        FLIP secondCard face up
+        IF firstCard matches secondCard
+            INCREMENT matchedPairs
+            SET firstCard and secondCard to NULL
+            IF matchedPairs is equal to totalPairs
+                CALL endGame with "win"
+        ELSE
+            WAIT for a short period
+            FLIP firstCard and secondCard face down
+            SET firstCard and secondCard to NULL
+
+// Function to handle the timer
+FUNCTION handleTimer()
+    DECREMENT timeLeft
+    UPDATE timer display
+    IF timeLeft is 0
+        CALL endGame with "lose"
+
+// Function to end the game
+FUNCTION endGame(result)
+    CLEAR timerInterval
+    IF result is "win"
+        DISPLAY "You win!" message
+    ELSE
+        DISPLAY "Time's up! You lose!" message
+    OFFER option to restart or exit the game
+
+// Event Listeners
+ADD event listeners to start game and reset game buttons
+
+// Start the game on page load or button click
+CALL startGame()
+
+END
+}
